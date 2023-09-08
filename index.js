@@ -2,6 +2,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 require('dotenv').config();
+const cors = require('cors'); // Import the 'cors' middleware
 
 
 const app = express();
@@ -9,6 +10,9 @@ const port = process.env.PORT || 3000;
 
 // Middleware for parsing JSON data
 app.use(bodyParser.json());
+
+app.use(cors());
+
 
 // Serve the HTML form (you can add this part if needed)
 
